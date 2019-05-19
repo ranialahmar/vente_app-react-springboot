@@ -1,40 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navig from '/home/rania/IdeaProjects/testreact/src/Components/navig';
+import { BrowserRouter as Router, Route ,Link} from "react-router-dom";
+import Admin from '/home/rania/IdeaProjects/testreact/src/Admin.js';
+import About from '/home/rania/IdeaProjects/testreact/src/About.js';
+import Affiche from './Affiche';
+import Comp from './Comp';
+
+
+
+
 
 class App extends Component {
-
-  state = {
-    users: []
-  };
-
-  async componentDidMount() {
-    const response = await fetch('/rest/users/all');
-    const body = await response.json();
-    this.setState({ users: body});
-  }
-
-  render() {
-    const {users} = this.state;
-
+  render(){
     return (
-       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-intro">
-            <h2>Users List</h2>
-            {users.map(user=>
-              <div key={user.id}>
-                {user.name} :
-                {user.email}
-              </div>
-            )}
-          </div>
-        </header>
+      <div >
+     <Router >
+      <div>
+      <Link to="/signup">Register|Log in</Link><br/>
+      <Route path="/signup" component={Navig} />
+      <Link to="/admin">admin space</Link>
+      <Route path="/admin" component={Admin} />
+      <Route path="/About" component={About} />
+      <Route path="/Affiche" component={Affiche} />
+      <Route path="/conf" component={Comp} />
+     
       </div>
+    </Router>
+    </div>
     );
-  }
+    }
+   
 }
 
 export default App;

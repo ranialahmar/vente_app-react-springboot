@@ -1,0 +1,32 @@
+.footer {
+  height: 35em;
+  background-color: rgb(88, 86, 86);
+  color: #FFF;
+  width: 100vw;
+  display: flex;
+  align-items:center; 
+  justify-content: center;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+ 
+
+}
+
+
+
+img {
+  -moz-transform:scale(0.6);
+
+transform:scale(0.6);
+transition: 0.5s;
+  
+  
+  
+}
+
+.ref{
+  padding-right: 1px;
+  max-height: 4em;
+  align-items: left;
+}

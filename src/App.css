@@ -1,12 +1,48 @@
 .App {
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(197, 96, 96, 0.795); 
 }
+.logi{ 
+padding-left: 33%;
+background-color: rgba(197, 96, 96, 0.795);
+padding-bottom: 10%;
+border-width: 7px;
 
+
+}
+.log{ 
+  padding-left: 25%;
+  background-color: rgba(197, 96, 96, 0.795);
+  padding-bottom: 10%;
+  border-width: 7px;
+  
+  
+  }
+  .welcome{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+
+
+ .Article{
+
+  text-align: center;
+ }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
+MDBCardHeader img{
+  -moz-transform:scale(0.1);
+-webkit-transform:scale(0.1);
+transform:scale(0.1);
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -18,10 +54,54 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.file img { 
+  -moz-transform:scale(0.1);
+  -webkit-transform:scale(0.1);
+  transform:scale(0.1);
+  max-width:50%;
+    
+
+ 
+}
+
+
+.Sell{
+    background-color: rgb(245, 157, 172);;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size:16px;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 10px;
+    width: 180px
+  }
+
+
+
+
 
 .App-link {
   color: #61dafb;
 }
+input[type=submit] {
+  background-color: rgb(245, 157, 172);;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 10px;
+  
+  height:50px;
+  
+  
+}
+
+
 
 @keyframes App-logo-spin {
   from {
@@ -31,3 +111,5 @@
     transform: rotate(360deg);
   }
 }
+
+
