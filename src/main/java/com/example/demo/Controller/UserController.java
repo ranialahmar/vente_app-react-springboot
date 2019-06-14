@@ -31,6 +31,11 @@ public class UserController {
 
 
     }
+    @GetMapping(value ="/allUs")
+    public List<Users> getAllUs()
+    {
+        return usersRepository.findAll();
+    }
     @GetMapping(value ="/all")
     public List<Users> getAll()
     {
@@ -45,5 +50,11 @@ public class UserController {
 
     }
 
+    @DeleteMapping("/user/delete/{email}")
+    public String delete(@PathVariable String email ){
+        Users prod = usersRepository.findUsersByEmail(email);
+        usersRepository.delete(prod);
+        return "deleted";
 
+    }
 }

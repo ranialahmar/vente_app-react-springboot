@@ -30,21 +30,6 @@ public class FileController {
   @Autowired
    private fileEntityRepository fileEntityRep;
 
-   /* @PostMapping("/upload")
-    public  UploadFileResponse  upload( @RequestParam("file") MultipartFile file,HttpServletRequest req ) throws IOException {
-
-            String fileName = file.getOriginalFilename();
-            String path = "/home/rania/IdeaProjects/testreact/src/images/"+ fileName;
-            saveFile(file.getInputStream(),path);
-            String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("/downloadFile/")
-                    .path(fileName)
-                    .toUriString();
-            return  new UploadFileResponse(fileName, fileDownloadUri,
-                    file.getContentType(), file.getSize());
-
-
-    }*/
 
 private void saveFile(InputStream input, String path){
         try{
@@ -83,33 +68,7 @@ private void saveFile(InputStream input, String path){
     }
 
 
-    /*@GetMapping("/file/{filename}")
-    public ResponseEntity<byte[]> getRandomFile(@PathVariable String filename ) throws IOException {
 
-        FileEntity fileEntity = fileEntityRep.findFileEntityByFileName(filename);
-        HttpHeaders header = new HttpHeaders();
-        header.setContentType(MediaType.valueOf(fileEntity.getContentType()));
-        header.setContentLength(fileEntity.getData().length);
-        header.set("Content-Disposition", "attachment; filename=" + fileEntity.getFileName());
-        return new ResponseEntity<>(fileEntity.getData(), header, HttpStatus.OK);
-    }*/
-
-
-    /*@GetMapping("/file/{email}")
-    public  List<String>getRandomFile(@PathVariable String email ) throws IOException {
-
-        List<FileEntity> fileEntity = fileEntityRep.findAllByEmail(email);
-        List<String> Listpath = new ArrayList<>();
-
-
-       // List<FileEntity> p = fileEntity.stream().filter(file -> file.getFilepath() == email).collect(Collectors.toList());
-        for (FileEntity  file:
-             fileEntity) {
-            Listpath.add(file.getFilepath());
-
-        }
-        return  Listpath;
-    }*/
 
 
 

@@ -2,12 +2,15 @@ package com.example.demo.model;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -56,7 +59,7 @@ public class Users implements Serializable {
     {
         this.id = id;
     }
-    public String getName()
+    public String getUsername()
     {
         return username;
     }
@@ -82,6 +85,8 @@ public class Users implements Serializable {
     {
         this.password = password;
     }
+
+
 
 
 
