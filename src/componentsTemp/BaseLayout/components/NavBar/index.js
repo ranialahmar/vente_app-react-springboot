@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import { NavLink,Link } from 'react-router-dom';
 import '/home/rania/IdeaProjects/testreact/src/componentsTemp/BaseLayout/components/Navbar/index.css';
-import log from '/home/rania/IdeaProjects/testreact/src/log.png';
-import ModalComponent from '../../../../ModalComponent';
+import log from '/home/rania/IdeaProjects/testreact/src/icons/log.png';
+
 
 class  Navbar extends Component
 {  
@@ -20,7 +20,7 @@ render(){
       <li><NavLink  className="nav-link" exact to="/">Home</NavLink></li>
      
       <li><Link className="nav-link" to="/register">Register</Link></li>
-      <li><Link  className="nav-link" to="/connect">Log In</Link></li>
+      <li><Link  className="nav-link" to="/connect">Login</Link></li>
     </ul>
   </nav>
 );

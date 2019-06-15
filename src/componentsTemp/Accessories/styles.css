@@ -26,6 +26,21 @@
   padding: 1em;
   background-color:white;
 }
+.descprof{
+  border: 4px solid rgb(212, 208, 209);
+  border-radius: 25px;
+  transition: transform 300ms bounce;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 40em;
+  width: 30em;
+  margin: .5em;
+  padding: 1em;
+  background-color:rgb(194, 181, 181);
+
+
+}
 .desc1{
   border: 4px solid rgb(212, 208, 209);
   border-radius: 25px;
@@ -147,9 +162,9 @@ i:hover {
 .coin {
   text-align: center;
   align-content: center;
-  align-items: center;
-  padding-left: 1em;
-  max-height: 1.5em;
+  align-items: flex-start;
+  padding-left: 0.5em;
+  max-height: 2em;
 }
 .medal {
   text-align: center;
@@ -164,7 +179,7 @@ i:hover {
   align-content: center;
   align-items: center;
   padding-left: 1em;
-  max-height: 1.4em;
+  max-height: 2em;
 }
 .edit {
   text-align: center;
@@ -178,6 +193,13 @@ i:hover {
   align-content: center;
   align-items: center;
   padding-left: 1em;
+  max-height: 4em;
+}
+.exit {
+  text-align: right;
+  align-content: right;
+  align-items: right;
+  padding-left: 4em;
   max-height: 4em;
 }
 .doc{

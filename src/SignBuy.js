@@ -6,24 +6,18 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 import Input from '@material-ui/core/Input';
-
 import InputAdornment from '@material-ui/core/InputAdornment';
-
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
-
-import lock from '/home/rania/IdeaProjects/testreact/src/girl.svg';
+import lock from '/home/rania/IdeaProjects/testreact/src/icons/girl.svg';
 import {
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
-  MDBCardBody,
-  MDBModalFooter,
-  MDBIcon,
-  MDBCardHeader,
-  MDBBtn
+  MDBCardBody
+  
 } from "mdbreact";
 
 class  SignBuy  extends Component

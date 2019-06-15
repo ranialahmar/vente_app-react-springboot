@@ -5,10 +5,10 @@ import { Container, Row, Col } from 'reactstrap';
 
 import '/home/rania/IdeaProjects/testreact/src/componentsTemp/BaseLayout/components/Footer/index.css';
 
-import fb from '/home/rania/IdeaProjects/testreact/src/facebook.svg';
-import insta from '/home/rania/IdeaProjects/testreact/src/instagram.svg';
-import mail from '/home/rania/IdeaProjects/testreact/src/gmail.svg';
-import ref from '/home/rania/IdeaProjects/testreact/src/refresh.svg';
+import fb from '/home/rania/IdeaProjects/testreact/src/icons/facebook.svg';
+import insta from '/home/rania/IdeaProjects/testreact/src/icons/instagram.svg';
+import mail from '/home/rania/IdeaProjects/testreact/src/icons/gmail.svg';
+
 
 class Footer extends Component { 
   render(){
@@ -18,17 +18,17 @@ class Footer extends Component {
       <Container>
       <Row>
       <Col  style={{textAlign: 'center', paddingTop:'50px'}}><h2> Buy and sell
-your clothes..</h2>
+your clothes..</h2><br/>
 
 </Col>
       </Row> 
       <Row>
     
-      <Col md='4'><img src={ref} width="30%"  className="ref" alt=""/><br/>Return Free</Col>
+      <Col md='4'><br/></Col>
       
     
       <Col md='4' > 
-     
+      <h2> You Can Contact us  </h2>
        <img src={insta} width="25%" alt=""/>
   <img src={fb} width="25%" alt=""/>
   <img src={mail} width="25%" alt=""/>

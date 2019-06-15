@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '/home/rania/IdeaProjects/testreact/src/logo.svg';
+import logo from '/home/rania/IdeaProjects/testreact/src/icons/logo.svg';
 import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from 'react-router';

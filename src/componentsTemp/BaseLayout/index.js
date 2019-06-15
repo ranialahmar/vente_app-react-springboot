@@ -6,10 +6,10 @@ import Header from '/home/rania/IdeaProjects/testreact/src/componentsTemp/BaseLa
 import Footer from '/home/rania/IdeaProjects/testreact/src/componentsTemp/BaseLayout/components/Footer';
 import './index.css';
 import {NavLink} from 'react-router-dom';
-import logo from '/home/rania/IdeaProjects/testreact/src/laundry.svg';
-import fille from '/home/rania/IdeaProjects/testreact/src/cute.svg';
-import comm from '/home/rania/IdeaProjects/testreact/src/deliveryt.svg';
-import logos from '/home/rania/IdeaProjects/testreact/src/logos.png';
+import logo from '/home/rania/IdeaProjects/testreact/src/icons/laundry.svg';
+import fille from '/home/rania/IdeaProjects/testreact/src/icons/cute.svg';
+import comm from '/home/rania/IdeaProjects/testreact/src/icons/deliveryt.svg';
+
 
 
 const classNames = [

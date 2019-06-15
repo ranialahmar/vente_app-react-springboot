@@ -1,5 +1,30 @@
 const products = [
-  {
+  { 
+    id: 21,
+    name: "sneakers",
+    description: "from zara collection",
+    price: 50,
+    gender: "women",
+    type: "shirt",
+    img: "https://assets.myntassets.com/assets/images/7717783/2018/11/30/fc00c12d-2391-4af9-8240-45d2dec217fb1543575562685-DressBerry-Women-Sea-Green-Espadrilles-5751543575561790-1.jpg",
+    inCart: false,
+    category: "clothes",
+    etat:"new",
+    size:"39"
+  },
+  { 
+    id: 22,
+    name: "backpack",
+    description: "frippery ",
+    price: 50,
+    gender: "women",
+    type: "backpack",
+    img: "https://www.naturellementchanvre.com/6849-large_default/gros-sac-dos-pure-chanvre.jpg",
+    inCart: false,
+    category: "clothes",
+    etat:"good ",
+    size:""
+  },{
     id: 1,
     name: "Brown Shirt",
     description: "Brown T-Shirt for Women",
@@ -15,7 +40,7 @@ const products = [
   {
     id: 2,
     name: "Light Brown Shirt",
-    description: "Light Brown Shirt for Women",
+    description: " Brown Shirt for Women",
     price: 4.99,
     gender: "women",
     type: "shirt",

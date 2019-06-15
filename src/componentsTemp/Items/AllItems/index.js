@@ -1,14 +1,12 @@
 //Dependencies
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 import map from 'lodash/map';
-import add from '/home/rania/IdeaProjects/testreact/src/palette.svg';
-import lock from '/home/rania/IdeaProjects/testreact/src/edit.svg';
-import medal from '/home/rania/IdeaProjects/testreact/src/medal.svg';
-import coin from '/home/rania/IdeaProjects/testreact/src/coins.svg';
+import lock from '/home/rania/IdeaProjects/testreact/src/icons/edit.svg';
+import medal from '/home/rania/IdeaProjects/testreact/src/icons/medal.svg';
+import coin from '/home/rania/IdeaProjects/testreact/src/icons/coins.svg';
 import { Redirect } from 'react-router';
-import tag from '/home/rania/IdeaProjects/testreact/src/tag.svg';
+import tag from '/home/rania/IdeaProjects/testreact/src/icons/tag.svg';
 import '/home/rania/IdeaProjects/testreact/src/componentsTemp/Accessories/styles.css';
 //Internals
 import PRODUCTS from '../../Data';
@@ -42,7 +40,7 @@ import PRODUCTS from '../../Data';
       <div className="desc1">
       <h2 > <b>{product.name}</b></h2>
       <div key={product.id} >
-        <Link to={`/products/:id`}>
+        <Link to={`/products/${product.id}`}>
         <div className="product-img">
           <img alt={product.name} src={product.img} />
         </div>
@@ -57,10 +55,11 @@ import PRODUCTS from '../../Data';
         <p id="product-price"><img className="coin"  width="20%"src={coin} alt=""/><b>Price </b>:${product.price}</p>
        
         </div>
-        <p id="product-price"><img className="coin"  width="20%"src={tag} alt=""/><b>Size </b>:{product.size}</p>
+        <p id="product-price"><img className="coin"  width="30%"src={tag} alt=""/><b>Size </b>:{product.size}</p>
           
         </div>
-        <input type="submit" width="10px"  onClick={this.handleSubmit}value="I Buy "/>
+        <center>
+        <input type="submit"  onClick={this.handleSubmit}value="I Buy "/></center>
       </div>
     ))}
   </div>

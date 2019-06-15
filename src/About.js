@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from '/home/rania/IdeaProjects/testreact/src/logo.svg';
+import logo from '/home/rania/IdeaProjects/testreact/src/icons/logo.svg';
 import { BrowserRouter as Router, Route ,Link} from "react-router-dom";
 import Users from '/home/rania/IdeaProjects/testreact/src/Users.js';
 import Products from '/home/rania/IdeaProjects/testreact/src/Products.js';

@@ -1,9 +1,9 @@
 .navbar {
   display: flex;
   background: linear-gradient(rgba(141, 139, 139, 0.7), rgba(223, 217, 217, 0));
-  height: 4em;
+  height: 4.5em;
   justify-content: center;
-  align-items: center;
+  align-items: right;
   box-shadow: none;
   background-color:rgba(245, 157, 172, 0.747);
 
@@ -15,26 +15,27 @@
 
 
 
-
 .navbar ul {
   display: flex;
   list-style: none;
   width: 90vw;
   margin: 0;
-  height: 3em;
+  height: 4em;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
 }
 
 .navbar li a {
   text-decoration: none;
-  margin: 0 1em;
+  margin: 0 7em;
   color: white;
-  transition: 0.5s;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.7s;
 }
 
 .navbar li a:hover {
   background: transparent;
   color: black;
-  transition: 0.5s;
+  transition: 0.7s;
 }

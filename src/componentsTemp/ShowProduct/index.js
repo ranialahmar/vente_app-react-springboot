@@ -9,41 +9,35 @@ import './index.css';
 
 class ShowProduct extends Component {
   render () {
-    const product = find(PRODUCTS, ['id', parseInt(this.props.match.params.id)]);
-    const currentProduct = product;
+    const productt = find(PRODUCTS, ['id', parseInt(this.props.match.params.id)]);
+    //const currentProduct = product;
     return (
       <div className="show-product">
         <div className="item-wrapper">
           <div className="item-image">
-            <img className="product-image" src={currentProduct.img} alt="product" />
+            <img className="product-image" src={productt.img} alt="product" />
           </div>
           <div className="item-name">
             <div className="product-info">
-              <h3 id="product-name">{currentProduct.name}</h3>
+              <h3 id="product-name">{productt.name}</h3>
             </div>
             <div className="product-bio">
-              <p id="product-description">{currentProduct.description}</p>
-              <p id="product-price">${currentProduct.price}</p>
+              <p id="product-description">{productt.description}</p>
+              <p id="product-price">{productt.price}</p>
               <Icon small id="add-icon">add_shopping_cart</Icon>
             </div>
             <div className="product-review">
-              <div className="stars">
-                <Icon small id="add-icon">star</Icon>
-                <Icon small id="add-icon">star</Icon>
-                <Icon small id="add-icon">star</Icon>
-                <Icon small id="add-icon">star</Icon>
-                <Icon small id="add-icon">star_half</Icon>
-              </div>
+              
             </div>
           </div>
         </div>
         <div className="similar-products">
-          <h5>You might also like</h5>
+          <h5><b>You might also like</b></h5>
           {PRODUCTS.map((product) => {
             if (
-              product.gender === currentProduct.gender
-              && product.type === currentProduct.type
-              && product.name !== currentProduct.name) {
+              product.gender === productt.gender
+              && product.type === productt.type
+              && product.name !== productt.name) {
               return(
                 <Link to={`/products/${product.id}`}>
                   <div key={product.id} className="item">
@@ -57,7 +51,7 @@ class ShowProduct extends Component {
                     </div>
                     </Link>
                     <div className="price-add">
-                      <h5 id="product-price">${product.price}</h5>
+                      <h5 id="product-price">{product.price}</h5>
                       <Icon small id="add-icon">add_shopping_cart</Icon>
                     </div>
                   </div>

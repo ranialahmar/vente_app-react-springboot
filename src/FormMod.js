@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import Comp from '/home/rania/IdeaProjects/testreact/src/Comp.js';
+
 import TextField from '@material-ui/core/TextField';
 import { Redirect } from 'react-router';
-import Affiche from '/home/rania/IdeaProjects/testreact/src/Affiche.js';
-import list from '/home/rania/IdeaProjects/testreact/src/list.svg';
-import cam from '/home/rania/IdeaProjects/testreact/src/photo-camera.svg';
+
+import list from '/home/rania/IdeaProjects/testreact/src/icons/list.svg';
+
 import {
   
   MDBInput
@@ -20,12 +20,11 @@ import {
   MDBCol,
   MDBCard,
   MDBCardBody,
-  MDBModalFooter,
-  MDBIcon,
-  MDBCardHeader,
-  MDBBtn
+ 
+  MDBCardHeader
+
 } from "mdbreact";
-var base64Img = require('base64-img');
+
 
 class  FormMod extends Component
 {   

@@ -9,26 +9,28 @@
 .item-wrapper {
   background-color: white;
   width: 50em;
-  border-left: 3px solid ;
-  border-right: 3px solid;
+  border-left: 3px  ;
+  border-right: 3px ;
+  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40em;
+  height: 30em;
   font-family: 'Quicksand', sans-serif;
   margin-left: 20em;
 }
 
 .similar-products {
-  height: 40em;
+  height: 35em;
   overflow: scroll;
   font-family: 'Lato', sans-serif;
   margin: 0 3em;
   background-color: white;
+  
 }
 
 .similar-product {
-  height: 30em;
+  height: 20em;
   width: 20em;
   font-family: 'Quicksand', sans-serif;
   overflow: hidden;

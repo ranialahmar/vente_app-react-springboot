@@ -3,9 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-
+import UserDel from '/home/rania/IdeaProjects/testreact/src/UserDel.js';
 import { BrowserRouter,Switch,Route} from 'react-router-dom';
-
+import AdminF from '/home/rania/IdeaProjects/testreact/src/AdminF.js';
+import ProdDel from '/home/rania/IdeaProjects/testreact/src/ProdDel.js';
+import ListProd from '/home/rania/IdeaProjects/testreact/src/ListProd.js';
 import App from '/home/rania/IdeaProjects/testreact/src/componentsTemp/App';
 import Cart from '/home/rania/IdeaProjects/testreact/src/componentsTemp/Cart';
 import BaseLayout from '/home/rania/IdeaProjects/testreact/src/componentsTemp/BaseLayout';
@@ -25,10 +27,11 @@ import Connect from '/home/rania/IdeaProjects/testreact/src/Components/Connect';
 import AfficheDel from '/home/rania/IdeaProjects/testreact/src/AfficheDel.js';
 //import Routes from '/home/rania/IdeaProjects/testreact/src/router.js';
 import * as serviceWorker from './serviceWorker';
-import ModalComponent from './ModalComponent';
+
 import Comp from './Comp';
 import FormMod from './FormMod';
 import SignBuy from './SignBuy';
+import Users from './Users';
 
 
 ReactDOM.render(
@@ -47,10 +50,15 @@ ReactDOM.render(
 <Route exact path="/products/:id" component={ShowProduct} />
 <Route exact path="/proddel/:idp/:email" component={AfficheDel} />
 <Route exact path="/prodmod/:idp/:email" component={FormMod} />
+<Route exact path="/userdel/:email/:username" component={UserDel} />
+<Route exact path="/prodel/:idp" component={ProdDel} />
 <Route path="/profile" component={Log} />
 <Route path="/welcome" component={Welcome} />
 <Route path="/About" component={About} />
 <Route path="/Form" component={Form} />
+<Route path="/admin" component={AdminF} />
+<Route path="/product" component={ListProd} />
+<Route path="/users" component={Users} />
 
      <Route path="/register" component={Sign} />
 

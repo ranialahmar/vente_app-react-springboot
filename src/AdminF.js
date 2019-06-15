@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-//import logo from '/home/rania/IdeaProjects/testreact/src/logo.svg';
 import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
-
 import Input from '@material-ui/core/Input';
-
+import Users from '/home/rania/IdeaProjects/testreact/src/Users.js';
 import InputAdornment from '@material-ui/core/InputAdornment';
-
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
-import Affiche from '/home/rania/IdeaProjects/testreact/src/Affiche.js';
-import lock from '/home/rania/IdeaProjects/testreact/src/icons/girl.svg';
+import lock from '/home/rania/IdeaProjects/testreact/src/icons/interview.svg';
 import {
   MDBContainer,
   MDBRow,
@@ -21,15 +16,12 @@ import {
   MDBCardBody
  
 } from "mdbreact";
-class  Connect extends Component
+class  AdminF extends Component
 {
 
     state = {
-      email: '',
+      username: '',
       password:'',
-      username:'',
-      telephone:'',
-      adresse:'',
       redirect: false,
       showPassword: false
     };
@@ -44,26 +36,14 @@ class  Connect extends Component
         event.preventDefault();
        
  
-        const user = {
-          email: this.state.email,
-          password: this.state.password
-         
-        };
+       
 
-        axios.get("/rest/users/email/"+this.state.email+"/password/"+this.state.password)
-        .then(res=>{
-            console.log(user);
-            console.log(res);
-            console.log(res.data.email);
-            if (res.data.email==this.state.email && res.data.password==this.state.password){
-                this.setState({ redirect: true ,email:res.data.email,adresse:res.data.adresse,telephone:res.data.tel,username:res.data.username})
-                }
-            else{
-                    alert("Verify Your Information");
-                }
-            
-          })
-          .catch(error => alert(error))
+        if(this.state.username==="admin" && this.state.password==="admin"){
+            this.setState({ redirect: true });
+        }
+        else{
+          alert("Only Admin is allowed ");
+      }
           
       }
       
@@ -71,9 +51,7 @@ class  Connect extends Component
         const { redirect } = this.state;
 
      if (redirect) {
-       return<Affiche email={this.state.email} username={this.state.username} telephone={this.state.telephone}
-         adresse={this.state.adresse}
-       />;
+       return<Users />;
      }
         return (
           <div className="App">
@@ -95,15 +73,15 @@ class  Connect extends Component
                 htmlFor="defaultFormEmailEx"
                 className="grey-text font-weight-light"
               >
-                <b>Email</b>
+                Username
               </label>
               <Input
-                type="email"
+                type="text"
                 id="defaultFormEmailEx"
                 className="form-control"
                 onChange={this.handleInputChange} 
-                name='email' 
-                value={this.state.email} 
+                name='username' 
+                value={this.state.username} 
 
               />
               
@@ -112,7 +90,7 @@ class  Connect extends Component
                 htmlFor="defaultFormPasswordEx"
                 className="grey-text font-weight-light"
               >
-               <b>Password</b>
+               Password
               </label>
               <Input
                  type={this.state.showPassword ? 'text' : 'password'}
@@ -150,4 +128,4 @@ class  Connect extends Component
         }   
     
 }
-export default Connect;
+export default AdminF;

@@ -1,18 +1,36 @@
 //Dependencies
-import React from 'react';
-import { Icon } from 'react-materialize';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import lock from '/home/rania/IdeaProjects/testreact/src/edit.svg';
-import medal from '/home/rania/IdeaProjects/testreact/src/medal.svg';
-import coin from '/home/rania/IdeaProjects/testreact/src/coins.svg';
-import cancel from '/home/rania/IdeaProjects/testreact/src/cancel.svg';
-import doc from '/home/rania/IdeaProjects/testreact/src/document.svg';
-import tag from '/home/rania/IdeaProjects/testreact/src/tag.svg';
+import lock from '/home/rania/IdeaProjects/testreact/src/icons/edit.svg';
+import medal from '/home/rania/IdeaProjects/testreact/src/icons/medal.svg';
+import coin from '/home/rania/IdeaProjects/testreact/src/icons/coins.svg';
+import tag from '/home/rania/IdeaProjects/testreact/src/icons/tag.svg';
+import { Redirect } from 'react-router';
 import '/home/rania/IdeaProjects/testreact/src/componentsTemp/Accessories/styles.css';
 //Internals
 import PRODUCTS from '/home/rania/IdeaProjects/testreact/src/componentsTemp/Data';
+class MenItems extends Component {
 
-const MenItems = () => (
+  state = {redirect:false}
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.setState({redirect:true});}
+
+
+
+  render(){
+    const { redirect } = this.state;
+   
+
+      if (redirect){ return(<div>  <Redirect  to= {{
+        pathname: '/buy'
+       
+    }}/>;
+     }
+     </div>) ;}
+else{
+  return (
   <div className="items">
     {
       PRODUCTS.map((product) => {
@@ -35,12 +53,13 @@ const MenItems = () => (
         <p id="product-price"><img className="coin"  width="20%"src={coin} alt=""/><b>Price </b>:${product.price}</p>
          </div>
          <p id="product-price"><img className="coin"  width="20%"src={tag} alt=""/><b>Size </b>:{product.size}</p>
-          
+         <center>
+        <input type="submit"  onClick={this.handleSubmit}value="I Buy "/></center>
           </div>
         )
       }
     })}
   </div>
-)
-
+  )}}
+  }
 export default MenItems;

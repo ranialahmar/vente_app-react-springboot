@@ -4,6 +4,12 @@
   justify-content: center;
   background-color: rgba(197, 96, 96, 0.795); 
 }
+.Appi {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+}
 .logi{ 
 padding-left: 33%;
 background-color: rgba(197, 96, 96, 0.795);
@@ -88,14 +94,14 @@ transform:scale(0.1);
 input[type=submit] {
   background-color: rgb(245, 157, 172);;
   border: 0;
-  border-radius: 5px;
+  border-radius: 60%;
   cursor: pointer;
   color: #fff;
   font-size:16px;
   font-weight: bold;
   line-height: 1.4;
   padding: 10px;
-  
+  width:90px;
   height:50px;
   
   

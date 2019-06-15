@@ -1,25 +1,20 @@
 //Dependencies
 import React, { Component } from 'react';
-/*import { Icon } from 'react-materialize';
-import { Link } from 'react-router-dom';*/
 //Internals
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '/home/rania/IdeaProjects/testreact/src/componentsTemp/Accessories/styles.css';
 import Form from './Form';
-import { Redirect } from 'react-router';
 import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Grid from '@material-ui/core/Grid';
-import add from '/home/rania/IdeaProjects/testreact/src/palette.svg';
-import lock from '/home/rania/IdeaProjects/testreact/src/edit.svg';
-import medal from '/home/rania/IdeaProjects/testreact/src/medal.svg';
-import coin from '/home/rania/IdeaProjects/testreact/src/coins.svg';
-import cancel from '/home/rania/IdeaProjects/testreact/src/cancel.svg';
-import doc from '/home/rania/IdeaProjects/testreact/src/document.svg';
-import tag from '/home/rania/IdeaProjects/testreact/src/tag.svg';
+import add from '/home/rania/IdeaProjects/testreact/src/icons/palette.svg';
+import lock from '/home/rania/IdeaProjects/testreact/src/icons/edit.svg';
+import medal from '/home/rania/IdeaProjects/testreact/src/icons/medal.svg';
+import coin from '/home/rania/IdeaProjects/testreact/src/icons/coins.svg';
+import cancel from '/home/rania/IdeaProjects/testreact/src/icons/cancel.svg';
+import doc from '/home/rania/IdeaProjects/testreact/src/icons/document.svg';
+import tag from '/home/rania/IdeaProjects/testreact/src/icons/tag.svg';
+import girl from '/home/rania/IdeaProjects/testreact/src/icons/profilgirl.svg';
+import exit from '/home/rania/IdeaProjects/testreact/src/icons/exit.svg';
 class  Affiche extends Component
 {
 
@@ -83,13 +78,27 @@ handleSubmitAdd = (event)  => {
         <div className="App">
         <div className="App-intro">
 
-    <h1>ALL your products </h1>
-  
+   
     </div>
     <div className="accessories">
-        <div className="accessories-title">
+        
+        <div className="items"> 
+        <div className="descprof">
+                <div className="product-details">
+                <h2><b>Hello {this.props.username} </b></h2><br/>
+                <img className="girl"  src={girl} alt=""/><br/>
+                
+               <h2><b>Mobile:</b>{this.props.telephone}</h2> <br/>
+              <h2> <b>Address:</b>{this.props.adresse}</h2><br/>
+              <Link to={'/'}> <img className="exit"  src={exit} alt=""/> <br/>Logout </Link>
+  
+
+
+                </div>
+                </div>
+                </div>
          
-          <Input type="submit" value="add new article" onClick={this.handleSubmitAdd}  />
+          <Input type="submit" value="new article" onClick={this.handleSubmitAdd}  />
            
         </div>
         <div className="items">
@@ -110,10 +119,6 @@ handleSubmitAdd = (event)  => {
                   <div className="product-img" key={product.idp}>
                     <img alt={product.file_name} src={require("/home/rania/IdeaProjects/testreact/src/images/"+product.file_name)} />
                   </div>
-      
-      
-                 
-            
                     <p> <img className="edit" width="13%"src={lock} alt=""/><b>Description</b> :{product.description}</p>
                   
                     <p>  <img className="medal"  width="10%"src={medal} alt=""/><b> Etat</b> :{product.etat}</p>
@@ -138,7 +143,7 @@ handleSubmitAdd = (event)  => {
       </div>
    
     
-    </div>
+    
 )
 
 }}
