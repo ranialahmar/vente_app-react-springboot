@@ -37,41 +37,34 @@ import Users from './Users';
 ReactDOM.render(
  
   <BrowserRouter>
-    <BaseLayout>
-    
-    <Switch>
-<Route exact path="/" component={App} />
-<Route path="/cart" component={Cart} />
-<Route path="/women" component={Women}  />
-<Route path="/men" component={Men} />
-<Route path="/clothes" component={Clothes}  />
-<Route path="/accessories" component={Accessories} />
-<Route path="/signup" component={Navig}  />
-<Route exact path="/products/:id" component={ShowProduct} />
-<Route exact path="/proddel/:idp/:email" component={AfficheDel} />
-<Route exact path="/prodmod/:idp/:email" component={FormMod} />
-<Route exact path="/userdel/:email/:username" component={UserDel} />
-<Route exact path="/prodel/:idp" component={ProdDel} />
-<Route path="/profile" component={Log} />
-<Route path="/welcome" component={Welcome} />
-<Route path="/About" component={About} />
-<Route path="/Form" component={Form} />
-<Route path="/admin" component={AdminF} />
-<Route path="/product" component={ListProd} />
-<Route path="/users" component={Users} />
-
-     <Route path="/register" component={Sign} />
-
-     <Route path="/buy" component={SignBuy} />
-     <Route path="/com" component={Comp} />
-
-
-   
-    <Route path="/connect" component={Connect} />
-</Switch>
- 
+    <BaseLayout> 
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/women" component={Women}  />
+        <Route path="/men" component={Men} />
+        <Route path="/clothes" component={Clothes}  />
+        <Route path="/accessories" component={Accessories} />
+        <Route path="/signup" component={Navig}  />
+        <Route exact path="/products/:id" component={ShowProduct} />
+        <Route exact path="/proddel/:idp/:email" component={AfficheDel} />
+        <Route exact path="/prodmod/:idp/:email" component={FormMod} />
+        <Route exact path="/userdel/:email/:username" component={UserDel} />
+        <Route exact path="/prodel/:idp" component={ProdDel} />
+        <Route path="/profile" component={Log} />
+        <Route path="/welcome" component={Welcome} />
+        <Route path="/About" component={About} />
+        <Route path="/Form" component={Form} />
+        <Route path="/admin" component={AdminF} />
+        <Route path="/product" component={ListProd} />
+        <Route path="/users" component={Users} />
+        <Route path="/register" component={Sign} />
+        <Route path="/buy" component={SignBuy} />
+        <Route path="/com" component={Comp} />
+        <Route path="/connect" component={Connect} />
+      </Switch>
     </BaseLayout>
-    </BrowserRouter>
+  </BrowserRouter>
 
 , document.getElementById('root'));
 serviceWorker.unregister();

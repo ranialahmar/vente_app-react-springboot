@@ -5,8 +5,6 @@ import '/home/rania/IdeaProjects/testreact/src/componentsTemp/BaseLayout/compone
 
 const Header = () => (
   <div className="header">
-    
-   
   </div>
 )
 

@@ -3,11 +3,8 @@ import React, { Component } from 'react';
 import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-
 import Input from '@material-ui/core/Input';
-
 import InputAdornment from '@material-ui/core/InputAdornment';
-
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
@@ -19,8 +16,8 @@ import {
   MDBCol,
   MDBCard,
   MDBCardBody
- 
 } from "mdbreact";
+
 class  Connect extends Component
 {
 
@@ -36,14 +33,13 @@ class  Connect extends Component
   
     handleInputChange = param =>
        this.setState({ [param.target.name]: param.target.value });
-       handleClickShowPassword = () => {
+
+    handleClickShowPassword = () => {
         this.setState(state => ({ showPassword: !state.showPassword }));
       };
   
     handleSubmit =  event => {
         event.preventDefault();
-       
- 
         const user = {
           email: this.state.email,
           password: this.state.password
@@ -52,9 +48,9 @@ class  Connect extends Component
 
         axios.get("/rest/users/email/"+this.state.email+"/password/"+this.state.password)
         .then(res=>{
-            console.log(user);
-            console.log(res);
-            console.log(res.data.email);
+            //console.log(user);
+            //console.log(res);
+            //console.log(res.data.email);
             if (res.data.email==this.state.email && res.data.password==this.state.password){
                 this.setState({ redirect: true ,email:res.data.email,adresse:res.data.adresse,telephone:res.data.tel,username:res.data.username})
                 }
@@ -64,37 +60,30 @@ class  Connect extends Component
             
           })
           .catch(error => alert(error))
-          
       }
       
-    render(){
-        const { redirect } = this.state;
+render(){
+    const { redirect } = this.state;
 
-     if (redirect) {
+    if (redirect) {
        return<Affiche email={this.state.email} username={this.state.username} telephone={this.state.telephone}
          adresse={this.state.adresse}
        />;
      }
-        return (
-          <div className="App">
-          <div className="logi">
-            
-               
-          <MDBContainer>
-      <MDBRow>
-        <MDBCol md="6">
-          <MDBCard>
-            <MDBCardBody>
-          
+    return (
+      <div className="App">
+        <div className="logi">     
+         <MDBContainer>
+          <MDBRow>
+           <MDBCol md="6">
+            <MDBCard>
+             <MDBCardBody>
               <div>
-             
                   <img width="80%" src={lock} alt=""/>
-                  </div>
-                  
+              </div>  
               <label
                 htmlFor="defaultFormEmailEx"
-                className="grey-text font-weight-light"
-              >
+                className="grey-text font-weight-light">
                 <b>Email</b>
               </label>
               <Input
@@ -103,15 +92,10 @@ class  Connect extends Component
                 className="form-control"
                 onChange={this.handleInputChange} 
                 name='email' 
-                value={this.state.email} 
-
-              />
-              
- 
+                value={this.state.email} />
               <label
                 htmlFor="defaultFormPasswordEx"
-                className="grey-text font-weight-light"
-              >
+                className="grey-text font-weight-light">
                <b>Password</b>
               </label>
               <Input
@@ -121,33 +105,27 @@ class  Connect extends Component
                 onChange={this.handleInputChange} 
                 name='password' 
                 value={this.state.password} 
-
                 endAdornment={
               <InputAdornment position="end">
                 <IconButton
                   aria-label="Toggle password visibility"
-                  onClick={this.handleClickShowPassword}
-                >
+                  onClick={this.handleClickShowPassword}>
                   {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             }
               />
-            
-
               <div className="text-center mt-4">
               <Input type="submit" onClick={this.handleSubmit} value="Sign In" href="#il-faut-aller-ici" />
               </div>
 
             </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer></div></div>
-            
-          
-         );
-        }   
-    
+           </MDBCard>
+          </MDBCol>
+         </MDBRow>
+        </MDBContainer>
+       </div>
+      </div>);
+}   
 }
 export default Connect;

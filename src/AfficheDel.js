@@ -12,7 +12,6 @@ class  AfficheDel extends Component
 {
 
   state = {
-    
     redirect:false,
     email:''
    
@@ -30,26 +29,19 @@ class  AfficheDel extends Component
  }
 
 
-    render(){ 
-      const { redirect } = this.state;
+render(){ 
+  const { redirect } = this.state;
      
-      if (redirect) {
+  if (redirect) {
         return(
         <Affiche email={this.state.email}/>);
       }
-      return(
+  return(
         <div className="App">
-        <div className="App-intro">
-
-    <input type="submit" value=" Back " onClick={this.handleDel}/>
-  
-    </div>
-   
-      
-   
-    
-    </div>
-)
+          <div className="App-intro">
+            <input type="submit" value=" Back " onClick={this.handleDel}/>
+          </div>
+        </div>)
 
 }}
  

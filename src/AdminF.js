@@ -34,10 +34,6 @@ class  AdminF extends Component
   
     handleSubmit =  event => {
         event.preventDefault();
-       
- 
-       
-
         if(this.state.username==="admin" && this.state.password==="admin"){
             this.setState({ redirect: true });
         }
@@ -47,32 +43,27 @@ class  AdminF extends Component
           
       }
       
-    render(){
-        const { redirect } = this.state;
+render(){
+  const { redirect } = this.state;
 
-     if (redirect) {
-       return<Users />;
-     }
-        return (
-          <div className="App">
-          <div className="logi">
-            
-               
-          <MDBContainer>
-      <MDBRow>
-        <MDBCol md="6">
-          <MDBCard>
+  if (redirect)
+ {
+    return<Users />;
+  }
+  return (
+    <div className="App">
+      <div className="logi">
+        <MDBContainer>
+         <MDBRow>
+          <MDBCol md="6">
+           <MDBCard>
             <MDBCardBody>
-          
               <div>
-             
-                  <img width="80%" src={lock} alt=""/>
-                  </div>
-                  
+                <img width="80%" src={lock} alt=""/>
+              </div>   
               <label
                 htmlFor="defaultFormEmailEx"
-                className="grey-text font-weight-light"
-              >
+                className="grey-text font-weight-light">
                 Username
               </label>
               <Input
@@ -82,10 +73,7 @@ class  AdminF extends Component
                 onChange={this.handleInputChange} 
                 name='username' 
                 value={this.state.username} 
-
               />
-              
- 
               <label
                 htmlFor="defaultFormPasswordEx"
                 className="grey-text font-weight-light"
@@ -99,33 +87,29 @@ class  AdminF extends Component
                 onChange={this.handleInputChange} 
                 name='password' 
                 value={this.state.password} 
-
                 endAdornment={
-              <InputAdornment position="end">
-                <IconButton
+                <InputAdornment position="end">
+                 <IconButton
                   aria-label="Toggle password visibility"
                   onClick={this.handleClickShowPassword}
-                >
+                  >
                   {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
+                 </IconButton>
+                </InputAdornment>
             }
               />
-            
-
               <div className="text-center mt-4">
               <Input type="submit" onClick={this.handleSubmit} value="Sign In" href="#il-faut-aller-ici" />
               </div>
 
             </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer></div></div>
-            
-          
-         );
-        }   
+           </MDBCard>
+          </MDBCol>
+         </MDBRow>
+        </MDBContainer>
+      </div>
+    </div>);
+}   
     
 }
 export default AdminF;

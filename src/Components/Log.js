@@ -10,10 +10,9 @@ class  Log  extends Component
    state = {
     redirect:'',
     email:''
-  };
-  componentDidMount(){ this.setState({ email: this.props.location.state.email });
+   };
 
-  }
+  componentDidMount(){ this.setState({ email: this.props.location.state.email });}
    
    handleSubmitAdd = (event)  => {
       event.preventDefault();
@@ -28,44 +27,32 @@ class  Log  extends Component
       
    }
   
-  
 
+render(){
+  const { redirect } = this.state;
 
-
-    render(){
-
-      const { redirect } = this.state;
-      switch(redirect) {
-         case 'true':
-      
-      
-         return <Redirect  to= {{
-          pathname: '/Form',
-          state: { email:this.state.email}
-      }}/>;
-      case 'delete':
+  switch(redirect) {
+   case 'true':
+      return <Redirect  to= {{
+                 pathname: '/Form',
+                 state: { email:this.state.email}
+             }}/>;
+   case 'delete':
       return <Affiche email={this.state.email}/>;
-      default:
-       return(
-        <div >
-        
-        <div className="App" >
-          
-          <h1>Welcome to your E-Dressing !! </h1>
-            
+   default:
+      return(
+        <div>
+          <div className="App" >
+           <h1>Welcome to your E-Dressing !! </h1> 
           </div>
           <div className="Article">
             <form >
-            <input type="submit" value="add new article" onClick={this.handleSubmitAdd.bind(this)} /><br/> <br/>
-            <input type="submit" value="check your profile" onClick={this.handleSubmitDel.bind(this)}/><br/><br/>
+               <input type="submit" value="add new article" onClick={this.handleSubmitAdd.bind(this)} /><br/> <br/>
+               <input type="submit" value="check your profile" onClick={this.handleSubmitDel.bind(this)}/><br/><br/>
             </form>
           </div>
-          </div>
-
-
-
-       );
-    }
+        </div>);
+        }
 
    }
 }

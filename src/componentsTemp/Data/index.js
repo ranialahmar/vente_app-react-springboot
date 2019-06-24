@@ -24,6 +24,19 @@ const products = [
     category: "clothes",
     etat:"good ",
     size:""
+  },
+  { 
+    id: 23,
+    name: "watch",
+    description: "ice watch old collection ",
+    price: 55,
+    gender: "men",
+    type: "accessories",
+    img: "https://i.ibb.co/fXwBH7T/montre.jpg",
+    inCart: false,
+    category: "accessories",
+    etat:"good ",
+    size:""
   },{
     id: 1,
     name: "Brown Shirt",

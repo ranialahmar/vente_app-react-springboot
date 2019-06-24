@@ -19,7 +19,7 @@ class MenItems extends Component {
 
 
 
-  render(){
+render(){
     const { redirect } = this.state;
    
 
@@ -31,31 +31,28 @@ class MenItems extends Component {
      </div>) ;}
 else{
   return (
-  <div className="items">
+    <div className="items">
     {
-      PRODUCTS.map((product) => {
-      if (product.gender === "men") {
-        return(
-          <div className="desc1">
-      <h2 > <b>{product.name}</b></h2>
-            <Link to={`/products/${product.id}`}>
+    PRODUCTS.map((product) => {
+    if (product.gender === "men") {
+      return(
+        <div className="desc1">
+          <h2 > <b>{product.name}</b></h2>
+          <Link to={`/products/${product.id}`}>
             <div className="product-img">
               <img alt={product.name} src={product.img} />
             </div>
-            </Link>
-            <div className="product-details">
-             
-            <p> <img className="edit" width="17%"src={lock} alt=""/><b>Description</b> :{product.description}</p>
-            </div>
-            
-            <p>  <img className="medal"  width="15%"src={medal} alt=""/><b> Condition</b> :{product.etat}</p>
-        <div className="price-add">
-        <p id="product-price"><img className="coin"  width="20%"src={coin} alt=""/><b>Price </b>:${product.price}</p>
-         </div>
-         <p id="product-price"><img className="coin"  width="20%"src={tag} alt=""/><b>Size </b>:{product.size}</p>
-         <center>
-        <input type="submit"  onClick={this.handleSubmit}value="I Buy "/></center>
+          </Link>
+          <div className="product-details">
+             <p> <img className="edit" width="17%"src={lock} alt=""/><b>Description</b> :{product.description}</p>
           </div>
+          <p>  <img className="medal"  width="15%"src={medal} alt=""/><b> Condition</b> :{product.etat}</p>
+          <div className="price-add">
+            <p id="product-price"><img className="coin"  width="20%"src={coin} alt=""/><b>Price </b>:{product.price} DT</p>
+          </div>
+          <p id="product-price"><img className="coin"  width="20%"src={tag} alt=""/><b>Size </b>:{product.size}</p>
+         <center><input type="submit"  onClick={this.handleSubmit}value="I Buy "/></center>
+        </div>
         )
       }
     })}

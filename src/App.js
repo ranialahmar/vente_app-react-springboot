@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navig from '/home/rania/IdeaProjects/testreact/src/Components/navig';

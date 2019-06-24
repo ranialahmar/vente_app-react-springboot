@@ -44,44 +44,30 @@ handleSubmit = event => {
          }
 
         return(
-            <div className="App">
+         <div className="App">
             <div className="App-intro">
-    
-            <h1>Verify your information </h1>
-      
-        </div>
-            
-               
-               <div className="accessories">
-        
+              <h1>Verify your information </h1>
+            </div>
+            <div className="accessories">
                <div className="items">
-         
-               <div className="desc">
-               <div className="product-details">
-               <h2>{this.props.location.state.title}</h2><br/>
-           
-                  <div className="product-img" >
-                  <img alt="hello" src={this.props.location.state.file}/>
+                 <div className="desc">
+                  <div className="product-details">
+                    <h2>{this.props.location.state.title}</h2><br/>
+                    <div className="product-img" >
+                      <img alt="hello" src={this.props.location.state.file}/>
+                    </div>
+                    <p> <img className="edit" width="20%"src={lock} alt=""/><b>Description</b> : {this.props.location.state.description}</p></div>
+                    <p ><img className="coin"  width="20%"src={coin} alt=""/><b>Price </b>: {this.props.location.state.price}</p>
+                    <p>  <img className="medal"  width="20%"src={medal} alt=""/><b> Condition</b> : {this.props.location.state.etat}</p>
+                    <p> <img className="pal"  width="20%"src={add} alt=""/><b>Color</b> : {this.props.location.state.color}</p>
+                    <p id="product-price"><img className="coin" max-width="30"  width="20%"src={tag} alt=""/><b>Size </b>: {this.props.location.state.size}</p>
+                    <form onClick={this.handleSubmit}>
+                      <input type="submit"  value="confirm " /> 
+                    </form>
                   </div>
-                 
-                
-                  <p> <img className="edit" width="20%"src={lock} alt=""/><b>Description</b> : {this.props.location.state.description}</p></div>
-                   
-                   <p ><img className="coin"  width="20%"src={coin} alt=""/><b>Price </b>: {this.props.location.state.price}</p>
-                   <p>  <img className="medal"  width="20%"src={medal} alt=""/><b> Condition</b> : {this.props.location.state.etat}</p>
-                   <p> <img className="pal"  width="20%"src={add} alt=""/><b>Color</b> : {this.props.location.state.color}</p>
-                   <p id="product-price"><img className="coin" max-width="30"  width="20%"src={tag} alt=""/><b>Size </b>: {this.props.location.state.size}</p>
-                   <form onClick={this.handleSubmit}>
-      <input type="submit"  value="confirm " /> 
-      </form>
-         </div>
-        
-                 
-    
-     </div>
-     
-        </div>
-        </div>
+                 </div>
+               </div>
+            </div>
         
             
     

@@ -12,10 +12,10 @@ import Form from '/home/rania/IdeaProjects/testreact/src/Form.js';
 
 class  Navig  extends Component
 {
-    render(){
-       return(
-        <div >
-        <Router >
+render(){
+    return(
+    <div >
+        <Router>
          <ul>
          <li>
              <Link to="/register">Register</Link> <br/>
@@ -34,12 +34,6 @@ class  Navig  extends Component
         </Router>
         </div>
        );
-
-
-
-
-
-
 
     }
 

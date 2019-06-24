@@ -13,44 +13,37 @@ class  UserDel extends Component
    redirect:false
 };
 
-async componentDidMount() {
-
+   async componentDidMount() {
     axios.delete('/rest/users/user/delete/'+this.props.match.params.email)
     .then(res=>{
         console.log(res);
         this.setState({ redirect : true});
     
-    }
-        );
+    });
 }
   
-        handleDel=()=>{
+    handleDel=()=>{
             this.setState({redirect:true, email:this.props.match.params.email})
           }
          
          
-             render(){ 
-               const { redirect } = this.state;
+render(){ 
+    const { redirect } = this.state;
               
-               if (redirect) {
-                 return(
-                 <Redirect to="/users" />);
-               }
-               return(
-                 <div className="App">
-                 <div className="App-intro">
+    if (redirect) 
+    {
+        return(
+         <Redirect to="/users" />);
+    }
+    return(
+         <div className="App">
+            <div className="App-intro">
                  <h1>{this.props.match.params.username}'s account is deleted </h1>
-         
-             <input type="submit" value=" Back to the List " onClick={this.handleDel}/>
-           
-             </div>
-            
-               
-            
-             
-             </div>
+                 <input type="submit" value=" Back to the List " onClick={this.handleDel}/>
+            </div>
+         </div>
          )
-         
-         }}
+         }
+}
           
 export default UserDel;

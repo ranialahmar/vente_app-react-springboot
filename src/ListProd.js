@@ -34,23 +34,18 @@ async componentDidMount() {
 render(){
     const { products } = this.state;
     return (
-<div className="Appi">
-        
-       
+     <div className="Appi">
         <div>
-        <h2>List of Products</h2>
-        
-         
+         <h2>List of Products</h2>
          <table className="table table-striped">
          <thead>
-          <tr>
-          <th>Id Product</th><th>title</th><th>email</th><th>size</th><th>price</th><th>description</th><th>categorie</th><th>color</th><th>etat</th><th>file name</th>
-          </tr>
-        </thead>
-        <tbody>
-        
+           <tr>
+            <th>Id Product</th><th>title</th><th>email</th><th>size</th><th>price</th><th>description</th><th>categorie</th><th>color</th><th>etat</th><th>file name</th>
+           </tr>
+         </thead>
+         <tbody>
          {products.map(prod=>
-              <tr key={prod.idp}>
+            <tr key={prod.idp}>
               <td> {prod.idp} </td>
                <td> {prod.title} </td>
                <td>{prod.email}</td>
@@ -60,19 +55,18 @@ render(){
                 <td>{prod.categorie}</td>
                 <td>{prod.color}</td>
                 <td>{prod.etat}</td>
-                
                 <td>{prod.file_name}</td>
                 <td>
-                <Link  to={`/prodel/${prod.idp}`} >
-                   <img className="cancel" width="20%"src={cancel} alt=""/>
-                   </Link></td>
-              </tr>)}
-              
-</tbody>
-              </table>
-              <Link to="/users"> <h2>Check the List of Users</h2></Link>
+                  <Link  to={`/prodel/${prod.idp}`} >
+                     <img className="cancel" width="20%"src={cancel} alt=""/>
+                   </Link>
+                </td>
+            </tr>)}     
+         </tbody>
+         </table>
+         <Link to="/users"> <h2>Check the List of Users</h2></Link>
         </div>
-        </div>
+    </div>
 
 
 

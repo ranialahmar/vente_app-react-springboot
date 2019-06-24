@@ -9,7 +9,7 @@ class  Admin extends Component
 {
 
     state = {
-        name: '',
+      name: '',
       password:'',
       redirect:false
     };
@@ -30,15 +30,14 @@ class  Admin extends Component
             }
          }
 
-    render(){
-        const { redirect } = this.state;
+render(){
+     const { redirect } = this.state;
 
      if (redirect) {
        return <Redirect to='/About'/>;
      }
-        return (
+     return (
             <div className="App">
-            
                <img src={logo} className="App-logo" alt="logo" />
                <div className="App-intro">
                

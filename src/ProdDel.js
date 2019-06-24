@@ -13,44 +13,36 @@ class  ProdDel extends Component
    redirect:false
 };
 
-async componentDidMount() {
-
+    async componentDidMount() {
     axios.delete('/rest/products/prod/delete/'+this.props.match.params.idp)
     .then(res=>{
         console.log(res);
         this.setState({ redirect : true});
-    
     }
         );
 }
   
-        handleDel=()=>{
+     handleDel=()=>{
             this.setState({redirect:true, email:this.props.match.params.idp})
           }
          
          
-             render(){ 
-               const { redirect } = this.state;
+render(){ 
+    const { redirect } = this.state;
               
-               if (redirect) {
-                 return(
-                 <Redirect to="/product" />);
+    if (redirect) {
+        return(
+            <Redirect to="/product" />);
                }
-               return(
-                 <div className="App">
-                 <div className="App-intro">
-                 
-         
-             <input type="submit" value=" Back to the List " onClick={this.handleDel}/>
-           
-             </div>
-            
-               
-            
-             
-             </div>
+    return(
+        <div className="App">
+            <div className="App-intro">
+               <input type="submit" value=" Back to the List " onClick={this.handleDel}/>
+            </div>
+        </div>
          )
          
-         }}
+         }
+}
           
 export default ProdDel;

@@ -19,34 +19,30 @@ componentDidMount(){
    
 handleSubmit =(event) => {
   event.preventDefault();
-  this.setState({redirect: true});}
+  this.setState({redirect: true});
+}
 
-    render(){
+render(){
 
       const { redirect } = this.state;
 
-      if (redirect) {
-        return( <Form email={this.state.email}/>); }
+      if (redirect) 
+      {
+        return( <Form email={this.state.email}/>);
+      }
    
-       return(
+      return(
         <div className="welcome">
-        
-      
-      
           <h1>Welcome {this.props.location.state.username} to your E-Dressing !! </h1>
-         <div className="forwel">
-          <form  onSubmit={this.handleSubmit}  >
-            <input  type="submit" value="Let's Try " /></form>
-            </div>
+           <div className="forwel">
+             <form  onSubmit={this.handleSubmit}  >
+               <input  type="submit" value="Let's Try " />
+             </form>
+           </div>
           
-          </div>
-
-
-
-       );
+        </div>
+        );
 
     }
-
-
 }
 export default Welcome;

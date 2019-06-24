@@ -5,7 +5,6 @@ import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import { Redirect } from 'react-router';
 import list from '/home/rania/IdeaProjects/testreact/src/icons/list.svg';
-
 import {
   
   MDBInput
@@ -42,14 +41,13 @@ class  Form extends Component
        email:'',
        selectedFile: null ,
        redirect:false,
-      
        path:''
     };
 
 
-    async componentDidMount(){ this.setState({ email: this.props.email });
-
-  }
+    async componentDidMount(){
+       this.setState({ email: this.props.email });
+      }
    
     handleInputChange = param =>
        this.setState({ [param.target.name]: param.target.value });
@@ -57,18 +55,13 @@ class  Form extends Component
 
 
     onFileChange = event => {
-      
         this.setState(
         { selectedFile:event.target.files[0]}
         
       );
     console.log(this.state.email);
-       
-      
      }
     
-      
-   
     
     handleSubmit = event => {
         event.preventDefault();
@@ -95,13 +88,14 @@ class  Form extends Component
                  )
                                       
      
-        axios.post('/api/files/addfile/', formData, 
-           this.state.email)
+        axios.post('/api/files/addfile/', formData,this.state.email
+          )
         .then(response => {
           this.setState({error: '', msg: 'Sucessfully uploaded file'});
         })
         .catch(err => {
-          this.setState({error: err, msg:'nooooooooo'});
+          this.setState({error: err, msg:'file not uploaded'});
+         
         }); 
        
        
@@ -145,82 +139,57 @@ class  Form extends Component
           return(<div>  <Redirect  to= {{
             pathname: '/com',
             state: { email:this.state.email,file:this.state.file ,title: this.state.title,
-          description: this.state.description,
-          color: this.state.color,
-          size: this.state.size,
-          categorie:this.state.categorie,
-          etat:this.state.etat,
-          price:this.state.price}
-        }}/>;
-         }
+            description: this.state.description,
+            color: this.state.color,
+            size: this.state.size,
+            categorie:this.state.categorie,
+            etat:this.state.etat,
+            price:this.state.price}}}/>;
          </div>) ;}
           
       
         return (
           <div className="App">
-          <div className="log">
-            
-         
-          <MDBContainer>
-      <MDBRow>
-        <MDBCol md="8">
-          <MDBCard>
-            <MDBCardBody>
-           <MDBCardHeader height="10%">
-            <h2>Describe your article!</h2>
-            
-            <div>
-             
-             <img width="30%" src={list} alt=""/>
-             </div>
-             </MDBCardHeader>
-             
-           
+           <div className="log">
+            <MDBContainer>
+             <MDBRow>
+              <MDBCol md="8">
+               <MDBCard>
+                 <MDBCardBody>
+                   <MDBCardHeader height="10%">
+                    <h2>Describe your article!</h2>
+                      <div>
+                        <img width="30%" src={list} alt=""/>
+                      </div>
+                   </MDBCardHeader>
                    <TextField id="outlined-name" label="Title" onChange={this.handleInputChange.bind(this)} name='title' 
-                 value={this.state.title} margin="normal"    variant="outlined" />
-                     <TextField id="outlined-name" label="State" onChange={this.handleInputChange} name='etat' 
-                 value={this.state.etat}  margin="normal"  variant="outlined" /><br/>
-                    <TextField id="outlined-name" label="Categorie:Women/Men.." onChange={this.handleInputChange} name='categorie' 
-                 value={this.state.categorie}  margin="normal"  variant="outlined" />
-                      <TextField id="outlined-name" label="Color" onChange={this.handleInputChange} name='color' 
-                 value={this.state.color}  margin="normal"  variant="outlined" /><br/>
-                     <TextField id="outlined-name" label="Size" onChange={this.handleInputChange} name='size' 
-                 value={this.state.size}  margin="normal"  variant="outlined" />
-                     <TextField id="outlined-name" label="Price" onChange={this.handleInputChange} name='price' 
-                 value={this.state.price}  margin="normal"  variant="outlined" /><br/>
-               
-                 <MDBInput type="textarea" id="outlined-name"  onChange={this.handleInputChange} name='description' 
-                 value={this.state.description}  margin="normal"   variant="outlined" /><br/>
-                 
-                 <div className="file">
-                   <h4 style={{color: 'red'}}>{this.state.error}</h4>
-                   <h4 style={{color: 'green'}}>{this.state.msg}</h4>
-                
-                   <p className="cap"><b> Your front article in full and on a neutral background.</b></p>
-               <input onChange={this.onFileChange} type="file" accept="image/*" /><br/>
-                     
+                       value={this.state.title} margin="normal"    variant="outlined" />
+                   <TextField id="outlined-name" label="State" onChange={this.handleInputChange} name='etat' 
+                       value={this.state.etat}  margin="normal"  variant="outlined" /><br/>
+                   <TextField id="outlined-name" label="Categorie:Women/Men.." onChange={this.handleInputChange} name='categorie' 
+                       value={this.state.categorie}  margin="normal"  variant="outlined" />
+                   <TextField id="outlined-name" label="Color" onChange={this.handleInputChange} name='color' 
+                       value={this.state.color}  margin="normal"  variant="outlined" /><br/>
+                   <TextField id="outlined-name" label="Size" onChange={this.handleInputChange} name='size' 
+                       value={this.state.size}  margin="normal"  variant="outlined" />
+                   <TextField id="outlined-name" label="Price" onChange={this.handleInputChange} name='price' 
+                       value={this.state.price}  margin="normal"  variant="outlined" /><br/>
+                   <MDBInput type="textarea" id="outlined-name"  onChange={this.handleInputChange} name='description' 
+                      value={this.state.description}  margin="normal"   variant="outlined" /><br/>
+                   <div className="file">
+                     <h4 style={{color: 'red'}}>{this.state.error}</h4>
+                     <h4 style={{color: 'green'}}>{this.state.msg}</h4>
+                     <p className="cap"><b> Your front article in full and on a neutral background.</b></p>
+                     <input onChange={this.onFileChange} type="file" accept="image/*" /><br/>
                      <input type="submit" onClick={this.handleSubmit} value="I Sell "/>
-               
-               
-              
-             
-                </div>
-
-
-
-                        
-                         
-                  
-                  
-                 
-                
-                  
-               
-                   </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer></div></div>
+                   </div>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+       </MDBContainer>
+      </div>
+    </div>
             
               
          );

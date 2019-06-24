@@ -18,7 +18,6 @@ render(){
     <li>
       <img src={log} alt="" /></li>
       <li><NavLink  className="nav-link" exact to="/">Home</NavLink></li>
-     
       <li><Link className="nav-link" to="/register">Register</Link></li>
       <li><Link  className="nav-link" to="/connect">Login</Link></li>
     </ul>

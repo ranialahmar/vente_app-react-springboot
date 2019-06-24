@@ -23,7 +23,7 @@ class ShowProduct extends Component {
             </div>
             <div className="product-bio">
               <p id="product-description">{productt.description}</p>
-              <p id="product-price">{productt.price}</p>
+              <p id="product-price">{productt.price} DT</p>
               <Icon small id="add-icon">add_shopping_cart</Icon>
             </div>
             <div className="product-review">
@@ -51,7 +51,7 @@ class ShowProduct extends Component {
                     </div>
                     </Link>
                     <div className="price-add">
-                      <h5 id="product-price">{product.price}</h5>
+                      <h5 id="product-price">{product.price}DT</h5>
                       <Icon small id="add-icon">add_shopping_cart</Icon>
                     </div>
                   </div>

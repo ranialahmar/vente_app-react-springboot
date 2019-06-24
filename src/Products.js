@@ -30,35 +30,27 @@ async componentDidMount() {
 render(){
     const { products } = this.state;
     return (
-<div className="App">
-        
-       
+     <div className="App">
         <div>
-        <p>List of Products</p>
-        
-         
-         <table className="table table-striped">
-         <thead>
-          <tr>
-            <th>designation</th><th>size</th><th>price</th><th>user_id</th>
-          </tr>
-        </thead>
-        <tbody>
-        
-         {products.map(product=>
+          <h2>List of Products</h2>
+          <table className="table table-striped">
+          <thead>
+            <tr>
+             <th>designation</th><th>size</th><th>price</th><th>user_id</th>
+            </tr>
+          </thead>
+          <tbody>
+             {products.map(product=>
               <tr key={product.prod_id}>
-               <td> {product.designation} </td>
-               <td>{product.size}</td>
-               <td> {product.price} </td>
-               <td> {product.user_id} </td>
-               
-              </tr>)}
-              
-</tbody>
-              </table>
-
+                 <td> {product.designation} </td>
+                 <td>{product.size}</td>
+                 <td> {product.price} </td>
+                 <td> {product.user_id} </td>
+              </tr>)}      
+          </tbody>
+          </table>
         </div>
-        </div>
+     </div>
 
 
 

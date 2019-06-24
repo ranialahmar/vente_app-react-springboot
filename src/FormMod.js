@@ -3,16 +3,12 @@ import React, { Component } from 'react';
 import '/home/rania/IdeaProjects/testreact/src/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-
 import TextField from '@material-ui/core/TextField';
 import { Redirect } from 'react-router';
-
 import list from '/home/rania/IdeaProjects/testreact/src/icons/list.svg';
 
 import {
-  
   MDBInput
- 
 } from "mdbreact";
 import {
   MDBContainer,
@@ -20,7 +16,6 @@ import {
   MDBCol,
   MDBCard,
   MDBCardBody,
- 
   MDBCardHeader
 
 } from "mdbreact";
@@ -30,7 +25,7 @@ class  FormMod extends Component
 {   
    
     state = {
-      title:'',
+       title:'',
        designation: '',
        description:'',
        categorie: '',
@@ -45,7 +40,6 @@ class  FormMod extends Component
        email:'',
        selectedFile: null ,
        redirect:false,
-      
        path:''
     };
 
@@ -116,8 +110,8 @@ class  FormMod extends Component
                  )
                                       
      
-        axios.post('/api/files/addfile/', formData, 
-           this.state.email)
+        axios.post('/api/files/addfile/', formData,this.state.email
+         )
         .then(response => {
           this.setState({error: '', msg: 'Sucessfully uploaded file'});
         })
@@ -158,39 +152,27 @@ class  FormMod extends Component
       }
     
 
-    render(){
-        const { redirect } = this.state;
-     
-
-        if (redirect) {
+render(){
+  const { redirect } = this.state;
+  if (redirect) {
           return(<div>  <Redirect  to= {{
             pathname: '/com',
-            state: { email:this.state.email,file:this.state.file}
-        }}/>;
-         }
-         </div>) ;}
-          
-      
-        return (
-          <div className="App">
-          <div className="log">
-            
-         
+            state: { email:this.state.email,file:this.state.file}}}/>;
+         </div>) ;} 
+  return(
+     <div className="App">
+        <div className="log"> 
           <MDBContainer>
-      <MDBRow>
-        <MDBCol md="8">
-          <MDBCard>
-            <MDBCardBody>
-           <MDBCardHeader height="10%">
-            <h2>Describe your article!</h2>
-            
-            <div>
-             
-             <img width="30%" src={list} alt=""/>
-             </div>
-             </MDBCardHeader>
-             
-           
+           <MDBRow>
+            <MDBCol md="8">
+             <MDBCard>
+              <MDBCardBody>
+               <MDBCardHeader height="10%">
+                 <h2>Describe your article!</h2>
+                 <div>
+                   <img width="30%" src={list} alt=""/>
+                 </div>
+               </MDBCardHeader>
                    <TextField id="outlined-name" label="Title" onChange={this.handleInputChange.bind(this)} name='title' 
                  value={this.state.title} margin="normal"    variant="outlined" />
                      <TextField id="outlined-name" label="State" onChange={this.handleInputChange} name='etat' 
@@ -210,32 +192,17 @@ class  FormMod extends Component
                  <div className="file">
                    <h4 style={{color: 'red'}}>{this.state.error}</h4>
                    <h4 style={{color: 'green'}}>{this.state.msg}</h4>
-                
                    <p className="cap"><b> Your front article in full and on a neutral background.</b></p>
-               <input onChange={this.onFileChange} type="file" accept="image/*" /><br/>
-                     
-                     <input type="submit" onClick={this.handleSubmit} value="I Sell "/>
-               
-               
-              
-             
-                </div>
-
-
-
-                        
-                         
-                  
-                  
-                 
-                
-                  
-               
-                   </MDBCardBody>
+                   <input onChange={this.onFileChange} type="file" accept="image/*" /><br/>
+                   <input type="submit" onClick={this.handleSubmit} value="I Sell "/>
+                 </div>
+             </MDBCardBody>
           </MDBCard>
         </MDBCol>
       </MDBRow>
-    </MDBContainer></div></div>
+    </MDBContainer>
+    </div>
+    </div>
             
               
          );
